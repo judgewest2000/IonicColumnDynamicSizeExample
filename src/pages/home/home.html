@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-card>
+        <ion-card-content>
+            <ion-input placeholder="Add numbers equalling 12 delimited with commas (e.g 4,3,3,2)" type="text" [(ngModel)]="current"></ion-input>
+            <button ion-button block (click)="add()">Add</button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row *ngFor="let row of fields">
+            <ion-col [attr.col-1]="col===1 ? true : null" [attr.col-2]="col===2 ? true : null" [attr.col-3]="col===3 ? true : null" [attr.col-4]="col===4 ? true : null" [attr.col-5]="col===5 ? true : null" [attr.col-6]="col===6 ? true : null" [attr.col-7]="col===7 ? true : null"
+                [attr.col-8]="col===8 ? true : null" [attr.col-9]="col===9 ? true : null" [attr.col-10]="col===10 ? true : null" [attr.col-11]="col===11 ? true : null" [attr.col-12]="col===12 ? true : null" *ngFor="let col of row.sizes">
+                Col Size: {{col}}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
